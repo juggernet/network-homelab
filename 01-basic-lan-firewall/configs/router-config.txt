@@ -1,0 +1,136 @@
+R1#sh run
+Building configuration...
+
+Current configuration : 1540 bytes
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$3Kje$ine6AFzaTdK/HH/m.lbDA/
+!
+no aaa new-model
+!
+!
+!
+bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+ip dhcp excluded-address 192.168.10.1 192.168.10.9
+!
+ip dhcp pool LAN1
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 8.8.8.8
+!
+!
+!
+no ip domain lookup
+ip domain name joc.com
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+cts logging verbose
+!
+!
+username admin secret 5 $1$ODpD$y8W5l0HlemN7ntzR231TE.
+!
+redundancy
+!
+!
+ip ssh version 2
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ description #####Enlace hacia Firewall fortinet a su interfaz port2#####
+ ip address 10.1.1.2 255.255.255.252
+!
+interface Ethernet0/1
+ description ##Enlace hacia mi LAN1##
+ ip address 192.168.10.1 255.255.255.0
+!
+interface Ethernet0/2
+ no ip address
+ shutdown
+!
+interface Ethernet0/3
+ no ip address
+ shutdown
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 10.1.1.1
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+banner motd ^C!!!!!!!!!!!SOLO PERSONAL AUTORIZADO!!!!!!!!!!^C
+!
+line con 0
+ logging synchronous
+ login local
+line aux 0
+line vty 0 3
+ login local
+ transport input none
+line vty 4
+ login local
+ transport input telnet ssh
+!
+!
+end
