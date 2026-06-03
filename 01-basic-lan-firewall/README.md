@@ -8,6 +8,8 @@ Implementar una red LAN básica utilizando Fortinet, Router Cisco y Switch, perm
 
 Internet → Fortinet → Router → Switch → Ubuntu
 
+![Topología de la red](images/topologia.png)
+
 ## Direccionamiento
 
 | Dispositivo | Interfaz | IP |
@@ -34,7 +36,21 @@ Internet → Fortinet → Router → Switch → Ubuntu
 
 ## Evidencias
 
-(Agregar capturas de pantalla)
+## Política de Firewall en FortiGate
+
+![Política de Firewall](images/policy-facebook.png)
+
+---
+
+## Conectividad a Internet
+
+![Prueba de acceso a Internet](images/internet.png)
+
+---
+
+## Acceso SSH al Router
+
+![Conexión SSH](images/ssh.png)
 
 ## Aprendizajes
 
