@@ -24,19 +24,14 @@ Documentar la implementación y configuración de diferentes tecnologías utiliz
 - Cisco IOL L2/L3
 - FortiGate VM
 - Ubuntu Server/Desktop
-- Kali Linux (próximamente)
 - Zabbix Server (próximamente)
 
 ## Laboratorios
 
 | Laboratorio | Estado |
 |------------|---------|
-| LAN básica con Firewall | En progreso |
-| VLANs e Inter-VLAN Routing | Pendiente |
-| NAT y acceso a Internet | Pendiente |
-| Web Filtering en Fortinet | Pendiente |
-| Monitoreo con Zabbix | Pendiente |
-| Automatización con Ansible | Pendiente |
+| LAN básica con Firewall | Completada |
+| LAN Two Tier | Completada |
 
 ## Topología Base
 
